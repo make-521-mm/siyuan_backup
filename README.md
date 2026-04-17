@@ -1,7 +1,8 @@
 
 ---
+### 🌏 语言 / Language
 
-### 🇬🇧 English README
+**[中文文档](README-zh.md)** | **[English](README.md)**
 
 ```markdown
 # 📁 SiYuan Note Encryption Backup Script
