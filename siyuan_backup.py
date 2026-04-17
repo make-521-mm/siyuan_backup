@@ -17,6 +17,8 @@ BACKUP_FILE_PREFIX = "SiYuan_data_"
 # 备份密码 (建议配置环境变量)
 BACKUP_PASSWORD = "4iyuan"
 # BACKUP_PASSWORD = os.getenv("SIYUAN_BACKUP_PWD")
+# 保留最新的 N 个备份
+KEEP_COUNT = 5
 
 # --- 1.1 新增：配置日志记录 ---
 # 获取当前脚本所在的目录
@@ -73,7 +75,7 @@ def backup_encrypted():
         # --- 阶段 3：清理旧文件 ---
         logging.info(f"🧹 开始清理旧备份...")
         cleanup_start = datetime.now()
-        cleanup_old_backups(WEBDAV_DIR)
+        cleanup_old_backups(WEBDAV_DIR, KEEP_COUNT)
         cleanup_duration = datetime.now() - cleanup_start
         logging.info(f"🧹 清理完成: {cleanup_duration}")
 
